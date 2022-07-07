@@ -1,0 +1,273 @@
+---
+title: "A showcase of new methods for high dimensional data viewing with linear projections and sections"
+author: "Di Cook"
+date: 
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "mytheme2.css", "panelset.css"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: FALSE
+---
+
+```{r setup, include=FALSE}
+#options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  error = FALSE, 
+  echo = FALSE,
+  fig.retina = 3)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(tidyverse)
+library(xaringanthemer)
+#solarized_light(
+#  text_font_family = list(google_font("Lato")),
+#)
+filter <- dplyr::filter
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+class: inverse middle hide-count
+background-image: url(img/wattle_bee.jpg)
+background-position: 99% 99%
+background-size: 50%
+
+# A showcase of new methods for high dimensional data viewing with linear projections and sections
+
+## Di Cook <br> Monash University
+
+### IFCS, Porto, Portugal <br> Jul 20, 2022
+
+.tiny[[https://dicook.org/files/IFCS2022/slides.html](https://dicook.org/files/IFCS2022/slides.html)]
+
+.footnote[Photo taken by Di Cook in 2018]
+
+
+```{r load libraries and look at wasps data}
+library(knitr)
+library(kableExtra)
+library(nullabor)
+library(tourr)
+library(RColorBrewer)
+library(MASS)
+library(ggthemes)
+data(wasps)
+```
+
+
+---
+class: middle center
+
+# You can see beyond 3D!
+
+---
+class: middle center
+count: false
+
+# ~~You can see beyond 3D!~~
+
+We are going to see that this is not true, and why it is useful to visualise high dimensions
+
+---
+background-color: white
+background-image: url(img/You_cant_see_beyond_3D.png)
+background-position: 50% 99%
+background-size: 80%
+
+---
+count: false
+background-color: white
+background-image: url(img/3D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+
+---
+count: false
+background-color: white
+background-image: url(img/4D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+
+---
+count: false
+background-color: white
+background-image: url(img/5D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+
+---
+count: false
+background-color: white
+background-image: url(img/6D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+---
+count: false
+background-color: white
+background-image: url(img/7D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+---
+count: false
+background-color: white
+background-image: url(img/8D.png)
+background-position: 50% 50%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+---
+count: false
+background-color: white
+background-image: url(img/9D.png)
+background-position: 50% 0%
+background-size: 60%
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+---
+count: false
+background-color: white
+background-image: url(img/10D.png)
+background-position: 50% 50%
+background-size: 60%
+
+
+.footnote[Source: https://ultraculture.org/blog/2014/12/16/heres-visual-guide-10-dimensions-reality/]
+
+---
+class: inverse middle center
+
+# It's not like that!
+--
+
+# It's more like this....
+
+---
+background-image: url(img/Houghton_EC85_Ab264_884f_-_Flatland,_cover.jpg)
+background-position: 80% 99%
+background-size: 30%
+
+[Flatland: A Romance of Many Dimensions (1884) Edwin Abbott](https://en.wikipedia.org/wiki/Flatland) 
+
+The story describes a two-dimensional world occupied by geometric figures, where women are simple line-segments, and men are polygons with various numbers of sides.
+
+A 3D intruder enters the 2D world!
+
+.footnote[Thanks to Barret Schloerke for introducing me to this novel and the movies.]
+---
+background-color: white
+# How we see high-dimensions in statistics.
+
+<img src="img/cubes.png" width="100%">
+
+Increasing dimension adds an additional orthogonal axis. 
+
+If you want more high-dimensional shapes there is an R package, [geozoo](http://schloerke.com/geozoo/all/), which will generate cubes, spheres, simplices, mobius strips, torii, boy surface, klein bottles, cones, various polytopes, ... 
+
+---
+.left-column[
+# High-dimensions
+### You can't see beyond 3D
+### A universe of 10 dimensions
+### Its more like...
+### And in statistics it is everywhere
+
+]
+.pull-right[
+- Principal component analysis
+- Multidimensional scaling
+- Factor analysis
+- Projection pursuit
+- Regression
+- Linear discriminant analysis
+- Cluster analysis
+- Multivariate distributions
+- Posterior distributions in Bayesian models
+]
+
+---
+class: middle
+
+Show penguins
+
+---
+class: middle
+
+Why do you want to?
+
+---
+class: middle
+
+Complexities
+
+- large $p$
+- lots of data
+- tiny signals
+
+---
+class: middle
+
+New developments
+
+---
+class: middle
+
+How do you do this yourself?
+
+---
+# Thanks for listening!
+
+Here's what I hope you take away from this talk:
+
+- 
+
+---
+### Additional reading
+
+.tiny[
+^ Stuff <br>
+]
+
+---
+class: inverse middle
+background-image: url(images/wattle_bee.jpg)
+background-position: 99% 1%
+background-size: 25%
+
+# Acknowledgements
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan), with **wattle theme** created from [xaringanthemer](https://github.com/gadenbuie/xaringanthemer).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Slides are available at [https://dicook.org/files/IFCS2022/slides.html](https://dicook.org/files/IFCS2022/slides.html) and supporting files at [https://github.com/dicook/IFCS2022](https://github.com/dicook/IFCS2022).
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+.footnote[Photo taken by Di Cook in 2018]
