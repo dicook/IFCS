@@ -174,9 +174,9 @@ class: inverse middle center
 # It's more like this....
 
 ---
-background-image: url(img/Houghton_EC85_Ab264_884f_-_Flatland,_cover.jpg)
-background-position: 99% 2%
-background-size: 13%
+background-image: url(img/flatland.jpg)
+background-position: 100% 0%
+background-size: 15%
 
 [Flatland: A Romance of Many Dimensions (1884) Edwin Abbott](https://en.wikipedia.org/wiki/Flatland) 
 
@@ -187,6 +187,13 @@ The narrator is a Square, who guides the readers through some of the implication
 He is himself visited by a 3D sphere! The Sphere from Spaceland levitates up and down, allowing Square to .yellow[see the circle expand and contract] (this would actually be a .yellow[slice] rather than a .yellow[projection]).
 
 .footnote[Thanks to Barret Schloerke for introducing me to this novel and the movies.]
+
+---
+background-color: white
+class: middle center
+
+<img src="flatland_explained.gif" width="100%">
+
 ---
 background-color: white
 # High-dimensions in statistics
@@ -209,7 +216,7 @@ If you want more high-dimensional shapes there is an R package, [geozoo](http://
 ]
 
 .pull-right[
-- Supervised classification
+- .orange[Supervised classification]
 - Clustering
 - Multivariate distributions
 - Posterior distributions
@@ -327,6 +334,7 @@ clrs <- ochre_pal(
 col <- clrs[
   as.numeric(
     penguins$species)]
+
 animate_xy(penguins[,2:5], 
            col=col, 
            axes="off", 
@@ -539,6 +547,19 @@ implementation re-worked into the R package called .yellow[spinifex] documented 
 - .orange[Interactivity] in R has been lacking, and tools are only starting to emerge now. 
 
 ---
+class: inverse middle 
+
+# New developments: 2019 to now
+
+interactivity <br>
+understanding nonlinear dimension reductions <br>
+handling many variables, and many observations <br>
+slice tour <br>
+sage tour <br>
+explainable AI and manual tour<br>
+
+
+---
 background-color: white
 
 .left-code[
@@ -619,20 +640,20 @@ The main purpose of [liminal](https://cran.r-project.org/web/packages/liminal/in
 
 Nonlinear dimension reduction is very popular, but can be tricky to calibrate and tune. .orange[What does the mapping do to the structure]?
 
+<br>
 <center>
-<img src="img/tsne1.png" width="250">
-<img src="img/tsne2.png" width="300">
-<img src="img/tsne3.png" width="300">
+<img src="img/tsne1.png" width="125">
+<img src="img/tsne2.png" width="150">
+<img src="img/tsne3.png" width="150">
 </center>
 
-.footnote[[Lee, Cook, Laa (2022) Casting Multiple Shadows](https://jdssv.org/index.php/jdssv/issue/current)]
+.footnote[[Lee, Cook, Laa (2022) Casting Multiple Shadows JDSSV](https://jdssv.org/index.php/jdssv/issue/current)]
 ---
 background-color: white
-class: middle center
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635905" width="900" height="850" frameborder="0" allowfullscreen></iframe>
+<iframe title="Animation linking the tSNE plot with a tour plot, of data with 6 clusters, 2 really large, 3 very small and close together, and 1 close to the three but slightly bigger. tSNE spreads them into 6 clusters, three big and three small roughly equidistant." src="https://player.vimeo.com/video/439635905" width="120%" height="600" frameborder="0" allowfullscreen></iframe>
+
 ---
-class: middle
 # Pre-processing
 
 .left-code[
@@ -654,21 +675,19 @@ For a .orange[large number of observations], sample, usually stratified.
 
 ---
 background-color: white
-class: middle center
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635892" width="900" height="850" frameborder="0" allowfullscreen></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635892"  width="120%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ---
 class: middle
 count: false
 
-# Note the the split in t-SNE is an artificial break in the data. 
+# Note the split in t-SNE is an artificial break in the data. 
 
 ---
 background-color: white
-class: middle center
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635863" width="900" height="850" frameborder="0" allowfullscreen></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635863"  width="120%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ---
 class: middle
@@ -679,9 +698,8 @@ count: false
 ---
 
 background-color: white
-class: middle center
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635812" width="900" height="850" frameborder="0" allowfullscreen></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/439635812"  width="120%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ---
 class: middle
@@ -693,10 +711,156 @@ count: false
 - two selected green groups far apart in t-SNE view are close in the data space.
 
 ---
+background-color: white
+
+.left-code[
 # Slicing
 
+.orange[Projections suffer from over-plotting.] 
+
+Example: Looking at the prediction boundaries for a classifier, just 3D.
+
+It would be nice to slice through high-d, but the complication is which way do you slice.
+
+.purple[Closer to Abbott's Flatland imagination.]
+]
+.right-plot[
+
+<img src="wine-radial-projected.gif" width="100%">
+
+]
+
+.footnote[[Laa, Cook, Valencia (2020) A slice tour for finding hollowness in high-dimensional data](https://doi.org/10.1080/10618600.2020.1777140)]
 ---
-# Sage tour
+background-color: white
+# Utilize distance from the projection plane to make the slice
+
+.left-code[
+
+<img src="img/centered-slice.png" width="100%">
+
+
+]
+.right-plot[
+
+<img src="img/orthogonal-distance.png" width="100%">
+
+]
+
+---
+background-color: white
+
+.left-code[
+Projections
+
+<img src="wine-radial-projected.gif" width="100%">
+
+]
+.right-plot[
+
+Slices through center of data
+
+<img src="wine-radial.gif" width="100%">
+
+]
+
+---
+background-color: white
+
+.left-code[
+Projections (5D)
+
+<img src="wine-poly-projected.gif" width="100%">
+
+]
+.right-plot[
+
+Slices through center of data (5D)
+
+<img src="wine-poly.gif" width="100%">
+
+]
+
+---
+background-color: white
+
+# Sage tour: reverses the curse 
+
+<center>
+<img src="img/sage-density-1.png" width="100%">
+</center>
+
+Increase variables, increase concentration, possibly obscuring important structure. 
+
+<center>
+.footnote[[Laa, Cook, Lee (2022) Burning sage: Reversing the curse of dimensionality](https://doi.org/10.1080/10618600.2021.1963264)]
+</center>
+
+---
+background-color: white
+
+# Sage tour: reverses the curse 
+
+```{r eval=FALSE, echo=FALSE}
+sphere10 <- geozoo::sphere.solid.random(10)$points
+colnames(sphere10) <- paste0("x", 1:10)
+render_gif(sphere10, grand_tour(), display_xy(axes="bottomleft"), gif_file = "sphere.gif")
+render_gif(sphere10, grand_tour(), display_sage(axes="bottomleft"), gif_file = "sphere_sage.gif")
+
+```
+
+<center>
+<img src="sphere.gif" width="42%">
+<img src="sphere_sage.gif" width="42%">
+</center>
+
+Radial transformation expands the center, generating the sage display. 
+
+---
+background-color: white
+
+<center>
+<img src="img/sage-mouse-cluster-1.png" width="90%">
+</center>
+
+Mouse retina single cell RNA-seq data, identify and verify cluster separation, regular display (top) and sage display (bottom).
+
+---
+background-color: white
+# Explainable Artificial Intelligence (XAI)
+
+Local variable importance for the model prediction for .orange[an individual observation], through small neighbourhood perturbations (LIME), or variable order permutation (SHAP). 
+
+
+<center>
+<img src="img/SHAP_football.png" width="850">
+</center>
+
+---
+background-color: white
+# XAI and a manual (radial) tour
+
+<img src="img/SHAP_penguins.png" width="900">
+
+.footnote[[Spyrison, Cook, Biecek (2022)](https://github.com/nspyrison/cheem_paper)]
+---
+background-color: white
+# XAI and a manual (radial) tour
+
+.left-code[
+<img src="img/case_penguins_BdBl.png" width="100%">
+
+Looks like  Gentoo based on bill length and depth.
+
+
+]
+.right-plot[
+
+<img src="img/case_penguins_BlFl.png" width="100%">
+
+but it is a Gentoo with unusually small flippers.
+
+]
 
 ---
 class: inverse middle
@@ -706,7 +870,6 @@ class: inverse middle
 ---
 background-color: white
 
-# Search for variance differences
 
 ```{r eval=FALSE, echo=FALSE}
 # Guided tour
@@ -846,32 +1009,94 @@ render_gif(feature_vs_noise[,1:5],
 ```
 
 <center>
-<iframe src="scagtour.html" width="800" height="500" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="scagtour.html" width="1000" height="480" frameBorder="0"> </iframe>
 </center>
 
+<br>
+Classification based on shape differences using scagnostics
+
+.footnote[[Mason, Lee, Laa, Cook (2022) cassowaryr R package](https://numbats.github.io/cassowaryr/)]
+
 ---
-# Other related work
 
-langevitour
+.left-code[
+# Getting started
 
----
-class: middle
+Install the `tourr` package from CRAN
 
-How do you do this yourself?
+```
+install.packages("tourr")
+```
+
+or from GitHub
+
+```
+remotes::install_github(
+  "ggobi/tourr")
+```
+
+```
+library(tourr)
+```
+
+Documentation at http://ggobi.github.io/tourr
+
+
+]
+
+.right-plot[
+
+```
+# Grand tour
+animate_xy(flea[, 1:6])
+
+# Guided tour
+animate_xy(flea[, 1:6], 
+  guided_tour(lda_pp(flea$species)), #<<
+  sphere = TRUE, 
+  col = flea$species)
+
+# Slice tour  
+sphere5 <- geozoo::sphere.hollow(5)$points
+colnames(sphere5) <- c("x1", "x2", "x3", "x4", "x5")
+animate_slice(sphere5) 
+
+# Sage tour
+sphere10 <- geozoo::sphere.solid.random(10)$points
+colnames(sphere10) <- paste0("x", 1:10)
+animate_sage(sphere10) 
+
+# Manual tour
+animate_xy(flea[, 1:6], 
+  radial_tour(basis_random(6, 2), 
+    var = 4)) 
+
+```
+
+
+]
 
 ---
 # Thanks for listening!
 
 Here's what I hope you take away from this talk:
 
-- 
+- it is possible to see beyond 3D
+- there are new ways for touring using slices and sage transformations
+- statistics is better if we keep our eyes involved.
 
 ---
 ### Additional reading
 
-.tiny[
-^ Stuff <br>
-]
+Wickham et al (2011) [tourr:](http://ggobi.github.io/tourr/) Explore shapes of high-dimensional data using low-dimensional projections. <br>
+
+Spyrison and Cook (2020) [spinifex:](https://nspyrison.github.io/spinifex/) Manual tour animations. <br>
+
+Hart and Wang (2022) [detourr:](https://cran.biotools.fr/web/packages/detourr/index.html) Animations for {tourr} using htmlwidgets for performance and portability. <br>
+
+Harrison (2022) [Langevin dynamics based tours](https://logarithmic.net/langevitour/) of data, in Javascript with R wrapper. <br>
+
+The [slides.Rmd](https://github.com/dicook/IFCS/blob/main/slides.Rmd) file has the .orange[R code to run most of the examples shown today]. 
 
 ---
 class: inverse middle
