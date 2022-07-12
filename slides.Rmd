@@ -1009,7 +1009,7 @@ render_gif(feature_vs_noise[,1:5],
 ```
 
 <center>
-<iframe src="scagtour.html" width="1000" height="480" frameBorder="0"> </iframe>
+<iframe src="scagtour.html" width="1000" height="450" frameBorder="0"> </iframe>
 </center>
 
 <br>
