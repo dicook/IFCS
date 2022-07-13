@@ -180,11 +180,11 @@ background-size: 15%
 
 [Flatland: A Romance of Many Dimensions (1884) Edwin Abbott](https://en.wikipedia.org/wiki/Flatland) 
 
-The story describes a 2D world (Flatland) occupied by geometric figures, where .yellow[women are simple line-segments], and .yellow[men are polygons with various numbers of sides].
+The story describes a 2D world (Flatland) occupied by geometric figures, where .orange[women are simple line-segments], and .orange[men are polygons with various numbers of sides].
 
-The narrator is a Square, who guides the readers through some of the implications of life in 2D (Flatland). The Square dreams about a visit to a 1D world (Lineland) inhabited by "lustrous points" (women?), where he is .yellow[can only be seen as a set of points]. The Square attempts to convince the realm's monarch of a second dimension. 
+The narrator is a Square, who guides the readers through some of the implications of life in 2D (Flatland). The Square dreams about a visit to a 1D world (Lineland) inhabited by "lustrous points" (women?), where he is .orange[can only be seen as a set of points]. The Square attempts to convince the realm's monarch of a second dimension. 
 
-He is himself visited by a 3D sphere! The Sphere from Spaceland levitates up and down, allowing Square to .yellow[see the circle expand and contract] (this would actually be a .yellow[slice] rather than a .yellow[projection]).
+He is himself visited by a 3D sphere! The Sphere from Spaceland levitates up and down, allowing Square to .orange[see the circle expand and contract] (this would actually be a .orange[slice] rather than a .orange[projection]).
 
 .footnote[Thanks to Barret Schloerke for introducing me to this novel and the movies.]
 
@@ -403,11 +403,11 @@ class: middle
 
 # Why do you want to use a tour?
 
-- Explore the data as potentially arising from a specific multivariate .yellow[distribution]
-- Examine .yellow[differences] between classes
-- Determine .yellow[important variables], which would contribute most to a classification
-- Detect .yellow[outliers], or unusual observations, that might contaminate model fitting
-- Assess and compare classification .yellow[models]
+- Explore the data as potentially arising from a specific multivariate .orange[distribution]
+- Examine .orange[differences] between classes
+- Determine .orange[important variables], which would contribute most to a classification
+- Detect .orange[outliers], or unusual observations, that might contaminate model fitting
+- Assess and compare classification .orange[models]
 
 ---
 
@@ -660,15 +660,15 @@ background-color: white
 
 When the .orange[number of variables is large], reduce the dimension with principal component analysis (PCA) to ten or less. 
 
-.purple[Example 2]: Tree data 100-D reduced to 12-D<br>
-.purple[Example 3]: Single cell RNA-seq processed to 25 PCs for clustering and t-SNE, and reduced to 5-D (20% of variance) for tour. 
+.yellow[Example 2]: Tree data 100-D reduced to 12-D<br>
+.yellow[Example 3]: Single cell RNA-seq processed to 25 PCs for clustering and t-SNE, and reduced to 5-D (20% of variance) for tour. 
 ]
 
 .right-plot[
 
 For a .orange[large number of observations], sample, usually stratified. 
 
-.purple[Example 3]: 10% stratified sample giving 4,590 observations to plot
+.yellow[Example 3]: 10% stratified sample giving 4,590 observations to plot
 
 ]
 
@@ -842,7 +842,13 @@ background-color: white
 
 <img src="img/SHAP_penguins.png" width="900">
 
-.footnote[[Spyrison, Cook, Biecek (2022)](https://github.com/nspyrison/cheem_paper)]
+.footnote[[Spyrison, Cook, Biecek (2022) Exploring Local Explanations of Nonlinear Models Using Animated Linear Projections](https://github.com/nspyrison/cheem_paper)]
+
+---
+background-color: white
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/666431172"  width="120%" height="600" frameborder="0" allowfullscreen></iframe>
+
 ---
 background-color: white
 # XAI and a manual (radial) tour
@@ -1083,6 +1089,7 @@ Here's what I hope you take away from this talk:
 
 - it is possible to see beyond 3D
 - there are new ways for touring using slices and sage transformations
+- stay tuned for new approaches for searching for shape differences between groups, and for slicing to explore/compare classifiers
 - statistics is better if we keep our eyes involved.
 
 ---

@@ -56,10 +56,11 @@ ul li li {
   list-style-type: none;
 }
 ul li:before {
-  content: "\f1fe";
+  content: "\2a";
   font-family: "FontAwesome";
   margin-right: 10px;
-  color: #686CA9;
+  color: #CFA118;
+  font-size: 1.4em;
 }
 ul li li:before {
   content: "\f200";
