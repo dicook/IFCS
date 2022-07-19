@@ -73,13 +73,13 @@ data(wasps)
 ---
 class: middle center
 
-# You can see beyond 3D!
+# You can't see beyond 3D!
 
 ---
 class: middle center
 count: false
 
-# ~~You can see beyond 3D!~~
+# ~~You can't see beyond 3D!~~
 
 We are going to see that this is not true, and why it is useful to visualise high dimensions
 
