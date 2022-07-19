@@ -53,7 +53,7 @@ background-size: 50%
 
 ### IFCS, Porto, Portugal <br> Jul 20, 2022
 
-.tiny[[https://dicook.org/files/IFCS2022/slides.html](https://dicook.org/files/IFCS2022/slides.html)]
+.tiny[[https://bit.ly/IFCS22-Cook](https://bit.ly/IFCS22-Cook)]
 
 .footnote[Photo taken by Di Cook in 2018]
 
@@ -182,7 +182,7 @@ background-size: 15%
 
 The story describes a 2D world (Flatland) occupied by geometric figures, where .orange[women are simple line-segments], and .orange[men are polygons with various numbers of sides].
 
-The narrator is a Square, who guides the readers through some of the implications of life in 2D (Flatland). The Square dreams about a visit to a 1D world (Lineland) inhabited by "lustrous points" (women?), where he is .orange[can only be seen as a set of points]. The Square attempts to convince the realm's monarch of a second dimension. 
+The narrator is a Square, who guides the readers through some of the implications of life in 2D (Flatland). The Square dreams about a visit to a 1D world (Lineland) inhabited by "lustrous points", where he .orange[can only be seen as a set of points]. The Square attempts to convince the realm's monarch of a second dimension. 
 
 He is himself visited by a 3D sphere! The Sphere from Spaceland levitates up and down, allowing Square to .orange[see the circle expand and contract] (this would actually be a .orange[slice] rather than a .orange[projection]).
 
@@ -359,7 +359,7 @@ render_gif(penguins[,2:5], grand_tour(),
 class: inverse middle 
 # Tours: low-d projections of high-d
 
-What we just saw was a grand tour
+What we just saw was a .orange[grand tour]
 
 # 1985
 
@@ -399,7 +399,10 @@ Tour is indexed by time, $F(t)$, where $t\in [a, z]$. Starting and target frame 
 
 
 ---
-class: middle
+background-color: white
+background-image: url(img/distributions.png)
+background-position: 80% 10%
+background-size: 116%
 
 # Why do you want to use a tour?
 
@@ -413,7 +416,7 @@ class: middle
 
 # Guided tour 
 
-New target bases are chosen using a projection pursuit index function
+New target bases are chosen using a .orange[projection pursuit index function]
 
 $$\mathop{\text{maximize}}_{F} g(F'x) ~~~\text{ subject to }
 F \text{ being orthonormal}$$
@@ -485,8 +488,8 @@ render_manual(penguins_s[,2:5], mtour2, "penguins_manual_bl.gif", col=col, dir =
 .left-code[
 
 - start from best projection, given by projection pursuit
-- bl contribution controlled
-- if bl is removed form projection, Adelie and chinstrap are mixed
+- .orange[bl contribution controlled]
+- if bl is removed from projection, Adelie and Chinstrap are mixed
 - bl is important for Adelie
 
 ]
@@ -506,7 +509,7 @@ background-color: white
 .left-code[
 
 - start from best projection, given by projection pursuit
-- fl contribution controlled
+- .orange[fl contribution controlled]
 - cluster less separated when fl is fully contributing
 - fl is important, in small amounts, for Gentoo
 
@@ -1024,6 +1027,15 @@ Classification based on shape differences using scagnostics
 .footnote[[Mason, Lee, Laa, Cook (2022) cassowaryr R package](https://numbats.github.io/cassowaryr/)]
 
 ---
+background-color: white
+
+# Slicing and centering of slice
+
+<img src="img/slice2_rf.png" width="45%"> 
+<img src="img/slice2_lda.png" width="45%"> 
+
+.footnote[mmtour: Experiments with manual tours in mathematica, Laa, Aumann, Cook, Valencia (2023?)]
+---
 
 .left-code[
 # Getting started
@@ -1117,7 +1129,7 @@ Slides created via the R package [**xaringan**](https://github.com/yihui/xaringa
 
 The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
 
-Slides are available at [https://dicook.org/files/IFCS2022/slides.html](https://dicook.org/files/IFCS2022/slides.html) and supporting files at [https://github.com/dicook/IFCS2022](https://github.com/dicook/IFCS2022).
+Slides are available at [https://bit.ly/IFCS22-Cook](https://bit.ly/IFCS22-Cook) and supporting files at [https://github.com/dicook/IFCS2022](https://github.com/dicook/IFCS2022).
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
